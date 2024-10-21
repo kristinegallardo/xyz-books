@@ -49,6 +49,8 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 gem "pg"
+gem 'faker'                                            # https://github.com/faker-ruby/faker
+gem 'shoulda-matchers', '~> 5.3'                                                         # https://github.com/thoughtbot/shoulda-matchers
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -58,6 +60,11 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem "rspec-rails"                                  # https://github.com/rspec/rspec-rails
+  gem 'factory_bot_rails'                            # https://github.com/thoughtbot/factory_bot_rails
+  gem 'byebug'
+  gem 'awesome_print'                                # https://github.com/awesome-print/awesome_print
+  gem 'rubocop'                                      # https://github.com/rubocop/rubocop
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
