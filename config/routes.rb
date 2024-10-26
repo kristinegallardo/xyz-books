@@ -3,4 +3,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  get '/search' => 'transactions#search'
+  get '/convert' => 'transactions#convert_isbn'
 end
