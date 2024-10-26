@@ -50,7 +50,9 @@ gem "bootsnap", require: false
 
 gem "pg"
 gem 'faker'                                            # https://github.com/faker-ruby/faker
-gem 'shoulda-matchers', '~> 5.3'                                                         # https://github.com/thoughtbot/shoulda-matchers
+gem 'shoulda-matchers'                                 # https://github.com/thoughtbot/shoulda-matchers
+gem 'isbn-tools'                                       # https://github.com/ragalie/isbn-tools
+gem 'active_interaction'                               # https://github.com/AaronLasseigne/active_interaction
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
