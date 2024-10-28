@@ -6,5 +6,6 @@ FactoryBot.define do
     isbn_13 { Faker::Code.isbn(base: 13) }
     price { Faker::Commerce.price(range: 500..5000.0) }
     publication_year { '2000' }
+    image_url { '/image/url' }
   end
 end
