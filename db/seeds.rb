@@ -30,23 +30,23 @@ fourth_publisher = Publisher.create!(name: 'McSweeney\'s')
 
 first_book = Book.create!(publisher: first_publisher, title: 'American Elf', isbn_13: '978-1-891830-85-3',
                           publication_year: 2004, edition: 'Book 2', price: 1000,
-                          image_url:  '../assets/images/american_elf_2004.png')
+                          image_url:  '../assets/american_elf_2004.png')
 
 second_book = Book.create!(publisher: second_publisher, title: 'Cosmoknights', isbn_13: '978-1-60309-454-2',
                            publication_year: 2019, edition: 'Book 1', price: 2000,
-                           image_url: '../assets/images/american_elf_2019.png')
+                           image_url: '../assets/cosmoknights_2019.png')
 
 third_book = Book.create!(publisher: third_publisher, title: 'Essex County', isbn_13: '978-1-60309-038-4',
                           publication_year: 1990, price: 500,
-                          image_url: '../assets/images/essex_county_1990.png')
+                          image_url: '../assets/essex_county_1990.png')
 
 fourth_book = Book.create!(publisher: third_publisher, title: 'Hey Mister (Vol 1)', isbn_13: '978-1-891830-02-0',
                            publication_year: 2000, edition: 'After School Special', price: 1200,
-                           image_url: '../assets/images/hey_mister_2000.png')
+                           image_url: '../assets/hey_mister_2000.png')
 
 fifth_book = Book.create!(publisher: fourth_publisher, title: 'The Underwater Welder', isbn_13: '978-1-60309-398-9',
                           publication_year: 2004, edition: 'Book 2', price: 1000,
-                          image_url: '../assets/images/The Underwater Welder.png')
+                          image_url: '../assets/The Underwater Welder.png')
 
 # Create Book Authors for Book and Author associated records
 
