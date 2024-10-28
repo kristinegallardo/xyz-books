@@ -17,11 +17,13 @@ class SearchIsbn < ActiveInteraction::Base
       {
         id: book_isbn_13.id,
         title: book_isbn_13.title,
-        author: book_isbn_13.authors.pluck(:first_name, :middle_name, :last_name).map { |name| name.compact.join(" ") }.join(", "),
+        authors: book_isbn_13.authors.pluck(:first_name, :middle_name, :last_name).map { |name| name.compact.join(" ") }.join(", "),
         edition: book_isbn_13.edition,
         price: book_isbn_13.price,
         isbn_13: book_isbn_13.isbn_13,
-        publisher: book_isbn_13.publisher.name
+        publisher: book_isbn_13.publisher.name,
+        publication_year: book_isbn_13.publication_year,
+        image_url: book_isbn_13.image_url
       },
       status: :ok
     }
