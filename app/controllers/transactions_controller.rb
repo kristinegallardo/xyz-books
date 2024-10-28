@@ -1,9 +1,18 @@
 class TransactionsController < ApplicationController
-  before_action :validate_isbn_number!
+  before_action :validate_isbn_number!, except: :index
+
+  def index
+  end
 
   def search
     data = SearchIsbn.run({ isbn: @isbn }).result
-    render json: data.except(:status), status: data[:status]
+    @result = data
+
+    if params[:api]
+      render json: data.except(:status), status: data[:status] if params[:api]
+    else
+      render :search
+    end
   end
 
   def convert_isbn
@@ -19,8 +28,11 @@ class TransactionsController < ApplicationController
 
     if ISBN_Tools.is_valid?(params[:isbn])
       @isbn = params[:isbn]
+    elsif params[:api]
+      render json: { success: false, message: 'Invalid ISBN'}, status: :bad_request
     else
-      render json: {message: 'Invalid ISBN'}, status: :bad_request
+      @result = { success: false, message: 'Invalid ISBN'}
+      render :search
     end
   end
 end
