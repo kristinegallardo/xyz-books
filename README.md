@@ -1,6 +1,6 @@
 # README
 
-### Things you need to install before cloning repo:
+### Gem Versions
 
 * Ruby version - `"3.1.2"`
 * Rails version - `"~> 7.0.8", ">= 7.0.8.5"`
@@ -72,3 +72,46 @@
   
   <img width="1709" alt="Screenshot 2024-10-28 at 18 41 24" src="https://github.com/user-attachments/assets/163925c2-d3b3-4766-89ba-fe1ed6d0945d">
  
+### SQL STATEMENT QUERY FOR OTHER OPTIONS ON SETTING TEST DATA 
+  (*note that inside <> angle brackets should consider actual id for specific record association)
+  * SQL for inserting Authors
+    
+     `INSERT INTO "public"."authors" ("first_name", "last_name", "middle_name") VALUES
+     ( 'Fannie', 'Flagg', 'Peters'),
+     ('Camille', 'Paglia', 'Byron'),
+     ('Joel', 'Hartse', NULL),
+     ('Kingsley', 'Amis', NULL),
+     ('Rainer', 'Rilke', 'Steel'),
+     ('Hannah', 'Templer', 'P.'),
+     ('Marguerite', 'Duras', 'Z.');`
+
+  * SQL for inserting Publishers
+
+    `INSERT INTO "public"."publishers" ("name") VALUES
+    ('Paste Magazine'),
+    ('Graywolf Press'),
+    ('McSweeney''s'),
+    ('Publishers Weekly');`
+
+  * SQL for inserting Books
+
+    `INSERT INTO "public"."books" ("publisher_id", "title", "isbn_13", "price", "publication_year", "edition", "image_url") VALUES
+    (<publisher_id>, 'The Underwater Welder', '978-1-60309-398-9', 1000, 2004, 'Book 2', '<image_link>'),
+    (<publisher_id>, 'American Elf', '978-1-891830-85-3', 1000, 2004, 'Book 2', '<image_link>'),
+    (<publisher_id>, 'Essex County', '978-1-60309-038-4', 500, 1990, NULL, '<image_link>'),
+    (<publisher_id>, 'Hey Mister (Vol 1)', '978-1-891830-02-0', 1200, 2000, 'After School Special', '<image_link>'),
+    (<publisher_id>, 'Cosmoknights', '978-1-60309-454-2', 2000, 2019, 'Book 1', '<image_link>'');`
+
+  * SQL for inserting BookAuthors (*select association for each book and it’s authors)
+
+     `INSERT INTO "public"."book_authors" ("book_id", "author_id") VALUES
+     (<book_id>, <author_id>),
+     (<book_id>, <author_id>),
+     (<book_id>, <author_id>),
+     (<book_id>, <author_id>),
+     (<book_id>, <author_id>),
+     (<book_id>, <author_id>),
+     (<book_id>, <author_id>),
+     (<book_id>, <author_id>),
+     (<book_id>, <author_id>);`
+
