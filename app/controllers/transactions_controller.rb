@@ -24,7 +24,7 @@ class TransactionsController < ApplicationController
   private
 
   def validate_isbn_number!
-    return render json: { message: "ISBN is required" } if params[:isbn].blank?
+    return render json: { message: "ISBN is required" }, status: :bad_request if params[:isbn].blank?
 
     if ISBN_Tools.is_valid?(params[:isbn])
       @isbn = params[:isbn]
